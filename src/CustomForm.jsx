@@ -8,7 +8,7 @@ const CustomForm = ({ status, message, onValidated }) => {
     email &&
       email.indexOf("@") > -1 &&
       onValidated({
-        EMAIL: email,
+        MERGE0: email,
       });
   };
 
@@ -35,7 +35,7 @@ const CustomForm = ({ status, message, onValidated }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          name="EMAIL"
+          name="MERGE0"
           className="required email p-2 rounded-md border-2 border-white"
           id="mce-EMAIL"
           required

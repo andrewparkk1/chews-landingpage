@@ -4,11 +4,11 @@ import "./index.css";
 import bgvideo from "./assets/bgvideofinal.mp4";
 import logo from "./assets/logo-white.png";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-// import CustomForm from "./CustomForm";
+import CustomForm from "./CustomForm";
 
 const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
 
-const SimpleForm = () => <MailchimpSubscribe url={url} />;
+// const SimpleForm = () => <MailchimpSubscribe url={url} />;
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
             <h3>enter your email to request access to the platform</h3>
           </div>
 
-          <MailchimpSubscribe
+          {/* <MailchimpSubscribe
             url={url}
             render={({ subscribe, status, message }) => (
               <div>
@@ -50,8 +50,8 @@ function App() {
                 )}
               </div>
             )}
-          />
-          {/* <MailchimpSubscribe
+          /> */}
+          <MailchimpSubscribe
             url={url}
             render={({ subscribe, status, message }) => (
               <CustomForm
@@ -60,7 +60,7 @@ function App() {
                 onValidated={(formData) => subscribe(formData)}
               />
             )}
-          /> */}
+          />
           <div className="flex flex-col items-center justify-center text-gray-200 absolute bottom-10">
             <div className="flex flex-row gap-5">
               {/* <p className="text-gray-300">follow along on</p> */}
