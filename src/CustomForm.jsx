@@ -32,7 +32,6 @@ const CustomForm = ({ status, message, onValidated }) => {
 
       <div className="mc__field-container flex flex-row pt-20">
         <input
-          label="Email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -45,7 +44,7 @@ const CustomForm = ({ status, message, onValidated }) => {
 
         <button
           className="button cursor-pointer text-white border-white border-2 py-2 px-6 bg-[rgb(69, 182, 237)] rounded-md font-semibold"
-          onClick={handleSubmit}
+          type="submit"
         >
           Submit
         </button>
