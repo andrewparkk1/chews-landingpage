@@ -31,7 +31,7 @@ function App() {
           </div>
 
           <MailchimpSubscribe
-            url="http://localhost:3000/https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4"
+            url={url}
             render={({ subscribe, status, message }) => (
               <CustomForm
                 status={status}
@@ -45,6 +45,7 @@ function App() {
             <div className="flex flex-row gap-5">
               {/* <p className="text-gray-300">follow along on</p> */}
               <a
+                rel="noreferrer"
                 target="_blank"
                 href="https://www.instagram.com/chewscorp/"
                 className="font-semibold"
@@ -53,6 +54,7 @@ function App() {
               </a>
               <p>|</p>
               <a
+                rel="noreferrer"
                 href="https://twitter.com/chews_chews"
                 target="_blank"
                 className="font-semibold"
@@ -61,6 +63,7 @@ function App() {
               </a>
               <p>|</p>
               <a
+                rel="noreferrer"
                 href="https://www.tiktok.com/@chews.wisely?_t=8WqUVGopPEU&_r=1"
                 target="_blank"
                 className="font-semibold"
