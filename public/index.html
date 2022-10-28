@@ -28,11 +28,6 @@
         $(document).ready(function() {
             $("#doc").fadeIn(2000).removeClass('hidden');
         });
-        jQuery.ajaxPrefilter(function(options) {
-            if (options.crossDomain && jQuery.support.cors) {
-                options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-            }
-        });
     </script>
 </head>
 

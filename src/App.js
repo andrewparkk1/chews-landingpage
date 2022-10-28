@@ -1,26 +1,28 @@
 import React, { useState } from "react";
 import "./index.css";
 // import video from "./assets";
-import bgvideo from "./assets/bgvideofinal.mp4";
+// import bgvideo from "./assets/bgvideofinal.mp4";
 import logo from "./assets/logo-white.png";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import CustomForm from "./CustomForm";
+// import MailchimpSubscribe from "react-mailchimp-subscribe";
+// import CustomForm from "./CustomForm";
 
 // const SimpleForm = () => <MailchimpSubscribe url={url} />;
 
-<form name="landingpage" netlify netlify-honeypot="bot-field" hidden>
+/* <form name="landingpage" netlify netlify-honeypot="bot-field" hidden>
   <input type="email" name="email" />
-</form>;
-
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
+</form>; */
 
 function App() {
   const [email, setEmail] = useState("");
-  const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
+  // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
 
   function handleSubmit(e) {
     fetch("/", {
@@ -36,7 +38,7 @@ function App() {
 
   return (
     <div>
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -44,7 +46,7 @@ function App() {
         className="w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0"
       >
         <source src={bgvideo} type="video/mp4" />
-      </video>
+      </video> */}
       <div id="doc" className="hidden">
         <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0">
           <div className="w-screen h-screen flex flex-col justify-center items-center pb-52">
