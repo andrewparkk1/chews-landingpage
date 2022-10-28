@@ -14,22 +14,6 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <form className="mc__form" onSubmit={(e) => handleSubmit(e)}>
-      {status === "sending" && (
-        <div className="mc__alert mc__alert--sending">sending...</div>
-      )}
-      {status === "error" && (
-        <div
-          className="mc__alert mc__alert--error"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          className="mc__alert mc__alert--success"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-
       <div className="mc__field-container flex flex-row pt-20">
         <input
           type="email"
@@ -48,6 +32,22 @@ const CustomForm = ({ status, message, onValidated }) => {
         >
           Submit
         </button>
+
+        {status === "sending" && (
+          <div className="mc__alert mc__alert--sending">sending...</div>
+        )}
+        {status === "error" && (
+          <div
+            className="mc__alert mc__alert--error"
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <div
+            className="mc__alert mc__alert--success"
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
       </div>
     </form>
   );
