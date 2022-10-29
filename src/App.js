@@ -18,14 +18,14 @@ function App() {
   const [email, setEmail] = useState("");
 
   function handleSubmit(e) {
+    e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
+      body: encode({ "form-name": "contact", ...email }),
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
-    e.preventDefault();
   }
 
   return (
@@ -48,15 +48,6 @@ function App() {
               <h3>chews is currently in beta</h3>
               <h3>enter your email to request access to the platform</h3>
             </div>
-
-            <form
-              name="contact"
-              netlify="true"
-              netlify-honeypot="bot-field"
-              hidden
-            >
-              <input type="email" name="email" />
-            </form>
 
             <form onSubmit={handleSubmit}>
               <p>
