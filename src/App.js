@@ -4,6 +4,8 @@ import logo from "./assets/logo-white.png";
 // import CustomForm from "./CustomForm";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
 import bgvideo from "./assets/bgvideofinal.mp4";
+import bgblue from "./assets/bgblue.png";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
@@ -38,6 +40,7 @@ function App() {
         muted
         playsInline
         className="w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0"
+        poster={bgblue}
       >
         <source src={bgvideo} type="video/mp4" />
       </video>
@@ -115,7 +118,7 @@ function App() {
               </div>
             </div> */}
 
-        <div class="mx-auto flex flex-col space-y-2 py-4 text-center text-gray-200">
+        <div class="mx-auto flex flex-col space-y-2 text-center text-gray-200 pb-3">
           <div className="flex flex-row gap-5 pb-2">
             <a
               rel="noreferrer"
