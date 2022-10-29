@@ -7,32 +7,32 @@ import logo from "./assets/logo-white.png";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
-  // const encode = (data) => {
-  //   return Object.keys(data)
-  //     .map(
-  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-  //     )
-  //     .join("&");
-  // };
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
 
   const [email, setEmail] = useState("");
 
-  // function handleSubmit(e) {
-  //   console.log(email);
-  //   e.preventDefault();
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     // body:
-  //     body: encode({ "form-name": "contact", emailaddress: email }),
-  //   })
-  //     .then(() => alert("Success!"))
-  //     .catch((error) => alert(error));
-  // }
+  function handleSubmit(e) {
+    console.log(email);
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      // body:
+      body: encode({ "form-name": "contact", emailadress: this.email }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+  }
 
   return (
     <div>
-      <video
+      {/* <video
         autoPlay
         loop
         muted
@@ -40,8 +40,8 @@ function App() {
         className="w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0"
       >
         <source src={bgvideo} type="video/mp4" />
-      </video>
-      <div id="doc" className="hidden">
+      </video> */}
+      <div id="doc" className="hidden bg-black">
         <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0">
           <div className="w-screen h-screen flex flex-col justify-center items-center pb-52">
             <img src={logo} alt="logo" className="pb-20" />
@@ -51,8 +51,7 @@ function App() {
               <h3>enter your email to request access to the platform</h3>
             </div>
 
-            <form method="post">
-              <input type="hidden" name="form-name" value="contact" />
+            <form onSubmit={handleSubmit}>
               <p>
                 <label>
                   Your Email:{" "}
