@@ -21,6 +21,7 @@ function App() {
 
   const [data, setData] = useState({ email: "" });
   const [update, setUpdate] = useState("");
+  const [update2, setUpdate2] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,7 +33,8 @@ function App() {
         // body:
         body: encode({ "form-name": "contact", ...data }),
       })
-        .then(() => setUpdate("Thank you for subscribing!"))
+        .then(() => setUpdate("Thank you for chewsing wisely."))
+        .then(() => setUpdate2("Stay tuned for the launch..."))
         .then(() => setData({ email: "" }))
         .catch((error) => alert(error));
     } else {
@@ -98,7 +100,14 @@ function App() {
               send
             </button>
           </form>
-          <p className="text-white font-semibold">{update}</p>
+          <div className="flex flex-col justify-center items-center">
+            <p className="text-white font-semibold px-4 text-center">
+              {update}
+            </p>
+            <p className="text-white font-semibold px-4 text-center">
+              {update2}
+            </p>
+          </div>
         </div>
         <i class="fa-brands fa-instagram"></i>
         {/* <MailchimpSubscribe
