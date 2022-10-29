@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
-import bgvideo from "./assets/bgvideofinal.mp4";
+// import bgvideo from "./assets/bgvideofinal.mp4";
 import logo from "./assets/logo-white.png";
 // import CustomForm from "./CustomForm";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
@@ -41,8 +41,8 @@ function App() {
       >
         <source src={bgvideo} type="video/mp4" />
       </video> */}
-      <div id="doc" className="hidden bg-black">
-        <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0">
+      <div id="doc" className="hidden">
+        <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0 bg-blue-300">
           <div className="w-screen h-screen flex flex-col justify-center items-center pb-52">
             <img src={logo} alt="logo" className="pb-20" />
             <h1 className="font-bold text-6xl text-white pb-4">chews</h1>
