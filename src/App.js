@@ -15,16 +15,15 @@ function App() {
       .join("&");
   };
 
-  const [email, setEmail] = useState("");
+  const [data, setData] = useState({ email: "" });
 
   function handleSubmit(e) {
-    console.log(email);
     e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       // body:
-      body: encode({ "form-name": "contact", emailadress: this.email }),
+      body: encode({ "form-name": "contact", ...data }),
     })
       .then(() => alert("Success!"))
       .catch((error) => alert(error));
@@ -41,7 +40,7 @@ function App() {
       >
         <source src={bgvideo} type="video/mp4" />
       </video> */}
-      <div id="doc" className="hidden">
+      <div id="doc" className="">
         <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0 bg-blue-300">
           <div className="w-screen h-screen flex flex-col justify-center items-center pb-52">
             <img src={logo} alt="logo" className="pb-20" />
@@ -58,8 +57,10 @@ function App() {
                   <input
                     type="email"
                     name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    // value={email}
+                    onChange={(e) =>
+                      setData({ [e.target.name]: e.target.value })
+                    }
                   />
                 </label>
               </p>
