@@ -177,7 +177,7 @@ function App() {
               <FaTiktok size={25}></FaTiktok>
             </a>
           </div>
-          <p class="text-xs">© Chews Inc. All Rights Reserved.</p>
+          <p class="text-xs">© Chews, Inc. All Rights Reserved.</p>
         </div>
       </div>
     </div>
