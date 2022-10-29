@@ -3,7 +3,7 @@ import "./index.css";
 import logo from "./assets/logo-white.png";
 // import CustomForm from "./CustomForm";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
-// import bgvideo from "./assets/bgvideofinal.mp4";
+import bgvideo from "./assets/bgvideofinal.mp4";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
@@ -16,6 +16,7 @@ function App() {
   };
 
   const [data, setData] = useState({ email: "" });
+  const [update, setUpdate] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,13 +26,13 @@ function App() {
       // body:
       body: encode({ "form-name": "contact", ...data }),
     })
-      .then(() => alert("Success!"))
+      .then(() => setUpdate("Thank you for subscribing!"))
       .catch((error) => alert(error));
   }
 
   return (
     <div>
-      {/* <video
+      <video
         autoPlay
         loop
         muted
@@ -39,35 +40,36 @@ function App() {
         className="w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0"
       >
         <source src={bgvideo} type="video/mp4" />
-      </video> */}
-      <div id="doc" className="">
-        <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0 bg-blue-300">
+      </video>
+      <div className="fadein">
+        <div className=" w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0">
           <div className="w-screen h-screen flex flex-col justify-center items-center pb-52">
             <img src={logo} alt="logo" className="pb-20" />
             <h1 className="font-bold text-6xl text-white pb-4">chews</h1>
-            <div className="flex flex-col justify-center items-center text-gray-200 text-md">
-              <h3>chews is currently in beta</h3>
-              <h3>enter your email to request access to the platform</h3>
+            <h2 className="font-bold text-3xl text-white pb-4 text-center px-10">
+              simplifying the search for food
+            </h2>
+
+            <div className="flex flex-col justify-center items-center text-gray-200 text-md pt-20 font-semibold">
+              <h3>Sign up for updates</h3>
             </div>
 
-            <form onSubmit={handleSubmit}>
-              <p>
-                <label>
-                  Your Email:{" "}
-                  <input
-                    type="email"
-                    name="email"
-                    // value={email}
-                    onChange={(e) =>
-                      setData({ [e.target.name]: e.target.value })
-                    }
-                  />
-                </label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
+            <form onSubmit={handleSubmit} className="py-4">
+              <input
+                type="email"
+                name="email"
+                placeholder="your@email.com"
+                className="required email p-2 rounded-md border-2 border-white"
+                onChange={(e) => setData({ [e.target.name]: e.target.value })}
+              />
+              <button
+                className="button cursor-pointer text-white border-white border-2 py-2 px-6 bg-[rgb(69, 182, 237)] rounded-md font-semibold"
+                type="submit"
+              >
+                send
+              </button>
             </form>
+            <p className="text-white font-semibold">{update}</p>
             {/* <MailchimpSubscribe
               url={url}
               render={({ subscribe, status, message }) => (
@@ -79,7 +81,7 @@ function App() {
               )}
             /> */}
 
-            <div className="flex flex-col items-center justify-center text-gray-200 absolute bottom-10">
+            {/* <div className="flex flex-col items-center justify-center text-gray-200">
               <div className="flex flex-row gap-5">
                 <a
                   rel="noreferrer"
@@ -108,6 +110,38 @@ function App() {
                   tiktok
                 </a>
               </div>
+            </div> */}
+
+            <div class="mx-auto flex flex-col space-y-2 py-4 text-center text-gray-200 absolute bottom-1">
+              <div className="flex flex-row gap-5 pb-2">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.instagram.com/chewscorp/"
+                  className="font-semibold"
+                >
+                  instagram
+                </a>
+                <p>|</p>
+                <a
+                  rel="noreferrer"
+                  href="https://twitter.com/chews_chews"
+                  target="_blank"
+                  className="font-semibold"
+                >
+                  twitter
+                </a>
+                <p>|</p>
+                <a
+                  rel="noreferrer"
+                  href="https://www.tiktok.com/@chews.wisely?_t=8WqUVGopPEU&_r=1"
+                  target="_blank"
+                  className="font-semibold"
+                >
+                  tiktok
+                </a>
+              </div>
+              <p class="text-xs">© Chews Inc. All Rights Reserved.</p>
             </div>
           </div>
         </div>
