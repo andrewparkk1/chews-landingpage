@@ -3,9 +3,10 @@ import "./index.css";
 import logo from "./assets/logo-white.png";
 // import CustomForm from "./CustomForm";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
-import bgvideo from "./assets/bgvideofinal.mp4";
+import bgvideo from "./assets/shortbgvidnofade.mp4";
 import bgblue from "./assets/bgblue.png";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import validator from "validator";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
@@ -22,14 +23,20 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // body:
-      body: encode({ "form-name": "contact", ...data }),
-    })
-      .then(() => setUpdate("Thank you for subscribing!"))
-      .catch((error) => alert(error));
+
+    if (validator.isEmail(data.email)) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        // body:
+        body: encode({ "form-name": "contact", ...data }),
+      })
+        .then(() => setUpdate("Thank you for subscribing!"))
+        .then(() => setData({ email: "" }))
+        .catch((error) => alert(error));
+    } else {
+      setUpdate("Not a valid email");
+    }
   }
 
   return (
@@ -63,6 +70,7 @@ function App() {
             <input
               type="email"
               name="email"
+              value={data.email}
               placeholder="your@email.com"
               className="required email p-2 rounded-md border-2 border-white"
               onChange={(e) => setData({ [e.target.name]: e.target.value })}
@@ -86,7 +94,6 @@ function App() {
                 />
               )}
             /> */}
-
         {/* <div className="flex flex-col items-center justify-center text-gray-200">
               <div className="flex flex-row gap-5">
                 <a
@@ -117,7 +124,6 @@ function App() {
                 </a>
               </div>
             </div> */}
-
         <div class="mx-auto flex flex-col space-y-2 text-center text-gray-200 pb-3">
           <div className="flex flex-row gap-5 pb-2">
             <a
