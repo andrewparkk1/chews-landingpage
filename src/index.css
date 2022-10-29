@@ -24,3 +24,12 @@
     opacity: 1;
   }
 }
+
+.grad {
+  background: rgb(69, 182, 237);
+  background: radial-gradient(
+    circle,
+    rgba(69, 182, 237, 1) 37%,
+    rgba(152, 221, 255, 1) 71%
+  );
+}

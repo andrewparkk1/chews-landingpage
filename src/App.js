@@ -3,10 +3,11 @@ import "./index.css";
 import logo from "./assets/logo-white.png";
 // import CustomForm from "./CustomForm";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
-import bgvideo from "./assets/shortbgvidnofade.mp4";
-import bgblue from "./assets/bgblue.png";
+// import bgvideo from "./assets/shortbgvidnofade.mp4";
+// import bgblue from "./assets/bgblue.png";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import validator from "validator";
+// import steam from "./assets/steam.gif";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
@@ -39,18 +40,33 @@ function App() {
     }
   }
 
+  // var vid = document.getElementById("vid");
+  // vid.oncanplaythrough = (event) => {
+  //   console.log(
+  //     "I think I can play through the entire " +
+  //       "video without ever having to stop to buffer."
+  //   );
+  // };
   return (
-    <div>
-      <video
+    <div className="grad">
+      {/* <img
+        src={steam}
+        alt="steam"
+        className="w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0"
+      /> */}
+
+      {/* <video
         autoPlay
         loop
         muted
         playsInline
         className="w-screen h-screen z-[-1] fixed object-cover top-0 bottom-0 right-0 left-0"
         poster={bgblue}
+        id="vid"
       >
         <source src={bgvideo} type="video/mp4" />
-      </video>
+      </video> */}
+
       <div className="fadein w-screen h-screen flex flex-col justify-center items-center">
         <div className="w-screen h-screen flex flex-col justify-center items-center flex-grow">
           <img src={logo} alt="logo" className="pb-16" />
