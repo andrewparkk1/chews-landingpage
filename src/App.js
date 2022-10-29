@@ -7,28 +7,28 @@ import logo from "./assets/logo-white.png";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
+  // const encode = (data) => {
+  //   return Object.keys(data)
+  //     .map(
+  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+  //     )
+  //     .join("&");
+  // };
 
   const [email, setEmail] = useState("");
 
-  function handleSubmit(e) {
-    console.log(email);
-    e.preventDefault();
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      // body:
-      body: encode({ "form-name": "contact", emailaddress: email }),
-    })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
-  }
+  // function handleSubmit(e) {
+  //   console.log(email);
+  //   e.preventDefault();
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     // body:
+  //     body: encode({ "form-name": "contact", emailaddress: email }),
+  //   })
+  //     .then(() => alert("Success!"))
+  //     .catch((error) => alert(error));
+  // }
 
   return (
     <div>
