@@ -42,7 +42,7 @@ function App() {
         <source src={bgvideo} type="video/mp4" />
       </video>
       <div className="fadein w-screen h-screen flex flex-col justify-center items-center">
-        <div className="w-screen h-screen flex flex-col justify-center items-center flex-grow pb-20">
+        <div className="w-screen h-screen flex flex-col justify-center items-center flex-grow">
           <img src={logo} alt="logo" className="pb-20" />
           <h1 className="font-bold text-6xl text-white pb-4">chews</h1>
           <h2 className="font-bold text-3xl text-white pb-4 text-center px-10">
