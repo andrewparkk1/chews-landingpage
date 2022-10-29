@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import bgvideo from "./assets/bgvideofinal.mp4";
 import logo from "./assets/logo-white.png";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import CustomForm from "./CustomForm";
+// import CustomForm from "./CustomForm";
+// import MailchimpSubscribe from "./MailchimpSubscribe";
 
 function App() {
-  const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
+  // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  const [email, setEmail] = useState("");
+
+  function handleSubmit(e) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
+    e.preventDefault();
+  }
 
   return (
     <div>
@@ -29,7 +49,32 @@ function App() {
               <h3>enter your email to request access to the platform</h3>
             </div>
 
-            <MailchimpSubscribe
+            <form
+              name="contact"
+              netlify="true"
+              netlify-honeypot="bot-field"
+              hidden
+            >
+              <input type="email" name="email" />
+            </form>
+
+            <form onSubmit={handleSubmit}>
+              <p>
+                <label>
+                  Your Email:{" "}
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </label>
+              </p>
+              <p>
+                <button type="submit">Send</button>
+              </p>
+            </form>
+            {/* <MailchimpSubscribe
               url={url}
               render={({ subscribe, status, message }) => (
                 <CustomForm
@@ -38,10 +83,10 @@ function App() {
                   onValidated={(formData) => subscribe(formData)}
                 />
               )}
-            />
+            /> */}
+
             <div className="flex flex-col items-center justify-center text-gray-200 absolute bottom-10">
               <div className="flex flex-row gap-5">
-                {/* <p className="text-gray-300">follow along on</p> */}
                 <a
                   rel="noreferrer"
                   target="_blank"
