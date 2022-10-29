@@ -43,17 +43,20 @@ function App() {
       </video>
       <div className="fadein w-screen h-screen flex flex-col justify-center items-center">
         <div className="w-screen h-screen flex flex-col justify-center items-center flex-grow">
-          <img src={logo} alt="logo" className="pb-20" />
-          <h1 className="font-bold text-6xl text-white pb-4">chews</h1>
-          <h2 className="font-bold text-3xl text-white pb-4 text-center px-10">
+          <img src={logo} alt="logo" className="pb-16" />
+          <h1 className="font-bold text-6xl text-white pb-2">chews</h1>
+          <h2 className="font-bold text-3xl text-white pb-2 text-center px-10">
             simplifying the search for food
           </h2>
 
-          <div className="flex flex-col justify-center items-center text-gray-200 text-md pt-20 font-semibold">
+          <div className="flex flex-col justify-center items-center text-gray-200 text-md pt-16 font-semibold">
             <h3>Sign up for updates</h3>
           </div>
 
-          <form onSubmit={handleSubmit} className="py-4">
+          <form
+            onSubmit={handleSubmit}
+            className="py-4 flex flex-row justify-center items-center"
+          >
             <input
               type="email"
               name="email"
