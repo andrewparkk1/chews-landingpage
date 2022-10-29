@@ -5,9 +5,9 @@ import logo from "./assets/logo-white.png";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
 // import bgvideo from "./assets/shortbgvidnofade.mp4";
 // import bgblue from "./assets/bgblue.png";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import validator from "validator";
 // import steam from "./assets/steam.gif";
+import { FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
@@ -100,6 +100,7 @@ function App() {
           </form>
           <p className="text-white font-semibold">{update}</p>
         </div>
+        <i class="fa-brands fa-instagram"></i>
         {/* <MailchimpSubscribe
               url={url}
               render={({ subscribe, status, message }) => (
@@ -141,32 +142,30 @@ function App() {
               </div>
             </div> */}
         <div class="mx-auto flex flex-col space-y-2 text-center text-gray-200 pb-3">
-          <div className="flex flex-row gap-5 pb-2">
+          <div className="flex flex-row gap-5 pb-2 items-center justify-between">
             <a
               rel="noreferrer"
               target="_blank"
               href="https://www.instagram.com/chewscorp/"
               className="font-semibold"
             >
-              instagram
+              <FaInstagram size={25}></FaInstagram>
             </a>
-            <p>|</p>
             <a
               rel="noreferrer"
               href="https://twitter.com/chews_chews"
               target="_blank"
               className="font-semibold"
             >
-              twitter
+              <FaTwitter size={25}></FaTwitter>
             </a>
-            <p>|</p>
             <a
               rel="noreferrer"
               href="https://www.tiktok.com/@chews.wisely?_t=8WqUVGopPEU&_r=1"
               target="_blank"
               className="font-semibold"
             >
-              tiktok
+              <FaTiktok size={25}></FaTiktok>
             </a>
           </div>
           <p class="text-xs">© Chews Inc. All Rights Reserved.</p>
