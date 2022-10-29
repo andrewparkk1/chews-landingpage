@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./index.css";
-// import bgvideo from "./assets/bgvideofinal.mp4";
 import logo from "./assets/logo-white.png";
 // import CustomForm from "./CustomForm";
 // import MailchimpSubscribe from "./MailchimpSubscribe";
+// import bgvideo from "./assets/bgvideofinal.mp4";
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
