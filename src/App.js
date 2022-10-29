@@ -18,10 +18,12 @@ function App() {
   const [email, setEmail] = useState("");
 
   function handleSubmit(e) {
+    console.log(email);
     e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      // body:
       body: encode({ "form-name": "contact", emailaddress: email }),
     })
       .then(() => alert("Success!"))
@@ -49,7 +51,8 @@ function App() {
               <h3>enter your email to request access to the platform</h3>
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form method="post">
+              <input type="hidden" name="form-name" value="contact" />
               <p>
                 <label>
                   Your Email:{" "}
