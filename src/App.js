@@ -8,6 +8,10 @@ import logo from "./assets/logo-white.png";
 import validator from "validator";
 // import steam from "./assets/steam.gif";
 import { FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+import ReactGA from "react-ga";
+const TRACKING_ID = "UA-246709965-1";
+ReactGA.initialize(TRACKING_ID);
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   // const url = `https://app.us21.list-manage.com/subscribe?u=ed94b197614d7ec47191edec8&id=187bea0dc4`;
