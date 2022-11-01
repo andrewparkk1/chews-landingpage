@@ -7,7 +7,7 @@ import logo from "./assets/logo-white.png";
 // import bgblue from "./assets/bgblue.png";
 import validator from "validator";
 // import steam from "./assets/steam.gif";
-import { FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaTwitter } from "react-icons/fa";
 import ReactGA from "react-ga";
 const TRACKING_ID = "UA-246709965-1";
 ReactGA.initialize(TRACKING_ID);
@@ -113,7 +113,6 @@ function App() {
             </p>
           </div>
         </div>
-        <i class="fa-brands fa-instagram"></i>
         {/* <MailchimpSubscribe
               url={url}
               render={({ subscribe, status, message }) => (
@@ -155,31 +154,32 @@ function App() {
               </div>
             </div> */}
         <div class="mx-auto flex flex-col space-y-2 text-center text-gray-200 pb-3">
-          <div className="flex flex-row gap-5 pb-2 items-center justify-between">
+          <div className="flex flex-row gap-10 pb-2 items-center justify-center">
             <a
               rel="noreferrer"
               target="_blank"
-              href="https://www.instagram.com/chewscorp/"
+              href="https://www.instagram.com/joinchews/"
               className="font-semibold"
             >
               <FaInstagram size={25}></FaInstagram>
             </a>
+            <p>|</p>
             <a
               rel="noreferrer"
-              href="https://twitter.com/chews_chews"
+              href="https://twitter.com/joinchews"
               target="_blank"
               className="font-semibold"
             >
               <FaTwitter size={25}></FaTwitter>
             </a>
-            <a
+            {/* <a
               rel="noreferrer"
               href="https://www.tiktok.com/@chews.wisely?_t=8WqUVGopPEU&_r=1"
               target="_blank"
               className="font-semibold"
             >
               <FaTiktok size={25}></FaTiktok>
-            </a>
+            </a> */}
           </div>
           <p class="text-xs">© Chews, Inc. All Rights Reserved.</p>
         </div>
